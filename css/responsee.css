@@ -87,12 +87,12 @@ img {
     max-width: 100%;
     width: auto;
 }
-.owl-item img,
+/*.owl-item img,
 .full-img {
     max-height: 600px;
     max-width: none;
     width: auto;
-}
+}*/
 table {
     background: none repeat scroll 0 0 #fff;
     border: 1px solid #f0f0f0;
