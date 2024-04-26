@@ -40,6 +40,12 @@
 .owl-carousel .owl-item{
 	float: left;
 }
+
+.owl-carousel .owl-item img {
+    max-height: 400px; /* Adjust this value as needed */
+    width: auto; /* This will maintain the aspect ratio */
+}
+
 .owl-controls .owl-page,
 .owl-controls .owl-buttons div{
 	cursor: pointer;
