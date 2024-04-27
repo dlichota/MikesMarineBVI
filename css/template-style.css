@@ -32,10 +32,14 @@ html {
     margin-bottom: 40px;
 }
 .info-window {
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
 }
 .info-content {
     color: #999;
+}
+
+.big {
+    font-size: 1.2rem; /* Adjust this value as needed */
 }
 
 footer {
