@@ -24,10 +24,15 @@
     position: relative;
     -webkit-transform: translate3d(0px, 0px, 0px);
 }
-.owl-carousel .owl-wrapper-outer {
+/*.owl-carousel .owl-wrapper-outer {
     overflow: hidden;
     position: relative;
-    width: 100%;
+    width: 100%;*/
+
+.owl-carousel .owl-wrapper-outer {
+    height: 50vh; /* Adjust this value as needed for responsive height */
+}
+
 }
 .owl-carousel .owl-wrapper-outer.autoHeight {
     -webkit-transition: height 500ms ease-in-out;
@@ -41,12 +46,24 @@
     float: left;
 }
 
-.owl-carousel .owl-item img {
+/*.owl-carousel .owl-item img {
     max-height: 600px; /* Adjust this value as needed */
     width: auto; /* This will maintain the aspect ratio */
     display: block;
     margin-left: auto;
     margin-right: auto;
+}*/
+
+.owl-carousel .owl-item img {
+    max-height: 600px; /* Adjust this value as needed */
+    max-width: 100%; /* Ensure images don't exceed the width of the container */
+    width: auto; /* This will maintain the aspect ratio */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative; /* For vertical centering */
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .owl-controls .owl-page,
