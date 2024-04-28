@@ -50,6 +50,13 @@ footer {
     .right {
         float: none;
     }
+    
+    @media only screen and (max-width: 768px) {
+  .hero-image {
+    width: 100%;
+    height: auto;
+  }
+        
 }
 hr.style-four {
     height: 12px;
