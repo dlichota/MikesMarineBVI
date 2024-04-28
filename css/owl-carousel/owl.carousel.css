@@ -47,8 +47,8 @@
 }
 
 /*.owl-carousel .owl-item img {
-    max-height: 600px; /* Adjust this value as needed */
-    width: auto; /* This will maintain the aspect ratio */
+    max-height: 600px; 
+    width: auto; 
     display: block;
     margin-left: auto;
     margin-right: auto;
