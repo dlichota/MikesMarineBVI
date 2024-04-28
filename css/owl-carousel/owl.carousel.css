@@ -46,25 +46,25 @@
     float: left;
 }
 
-/*.owl-carousel .owl-item img {
+.owl-carousel .owl-item img {
     max-height: 600px; 
     width: auto; 
     display: block;
     margin-left: auto;
     margin-right: auto;
-}*/
+}
 
-.owl-carousel .owl-item img {
-    max-height: 600px; /* Adjust this value as needed */
-    max-width: 100%; /* Ensure images don't exceed the width of the container */
-    width: auto; /* This will maintain the aspect ratio */
+/*.owl-carousel .owl-item img {
+    max-height: 600px;
+    max-width: 100%; 
+    width: auto; 
     display: block;
     margin-left: auto;
     margin-right: auto;
-    position: relative; /* For vertical centering */
+    position: relative; 
     top: 50%;
     transform: translateY(-50%);
-}
+}*/
 
 .owl-controls .owl-page,
 .owl-controls .owl-buttons div {
