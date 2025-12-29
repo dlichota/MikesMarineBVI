@@ -281,101 +281,49 @@
                     <div class="row">
                         <div class="col-md-9">
                             <h2>Contact Mike's Marine BVI</h2>
-                            <form name="contact" method="POST" data-netlify="true">
+<form name="contact" method="POST" data-netlify="true">
   <input type="hidden" name="form-name" value="contact" />
 
-  <p>
-    <label>Name
-      <input type="text" name="name" required />
-    </label>
-  </p>
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input
+      type="text"
+      id="name"
+      name="name"
+      class="form-control"
+      placeholder="Your name"
+      required
+    />
+  </div>
 
-  <p>
-    <label>Email
-      <input type="email" name="email" required />
-    </label>
-  </p>
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input
+      type="email"
+      id="email"
+      name="email"
+      class="form-control"
+      placeholder="you@example.com"
+      required
+    />
+  </div>
 
-  <p>
-    <label>Message
-      <textarea name="message" rows="7" required></textarea>
-    </label>
-  </p>
+  <div class="form-group">
+    <label for="message">Message</label>
+    <textarea
+      id="message"
+      name="message"
+      class="form-control"
+      rows="5"
+      placeholder="How can Mike help you?"
+      required
+    ></textarea>
+  </div>
 
-  <p>
-    <button type="submit">Send</button>
-  </p>
+  <button type="submit" class="btn btn-effect">
+    Send Message
+  </button>
 </form>
-
-                            <!-- Start Contact Form -->
-                            <!--<form role="form" id="contactForm" class="contact-form shake" data-toggle="validator">-->
-
-                            <!-- <form
-                                abframeid="iframe.0.5611010646406551"
-                                abineguid="1BF11D82F6D14086A58F169872911267"
-                                action="https://formsubmit.co/mike@mikesmarinebvi.com"
-                                method="POST">
-                                <div class="form-group">
-                                    <div class="controls">
-                                        <input
-                                            class="form-control"
-                                            data-error="Please enter your name"
-                                            id="name"
-                                            name="name"
-                                            placeholder="Name"
-                                            required=""
-                                            type="text" />
-                                        <div class="help-block with-errors"></div>
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <div class="controls">
-                                        <input
-                                            class="email form-control"
-                                            data-error="Please enter your email"
-                                            id="email"
-                                            name="email"
-                                            placeholder="Email"
-                                            required=""
-                                            type="email" />
-                                        <input name="_replyto" type="hidden" />
-                                        <div class="help-block with-errors"></div>
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <div class="controls">
-                                        <textarea
-                                            class="form-control"
-                                            data-error="Write your message"
-                                            id="message"
-                                            name="message"
-                                            placeholder="Message"
-                                            required=""
-                                            rows="7"></textarea>
-
-                                        <div
-                                            class="help-block with-errors"></div>
-                                        <input
-                                            name="_cc"
-                                            type="hidden"
-                                            value="dlichota@gmail.com" />
-                                    </div>
-                                </div>
-                                <button
-                                    class="btn btn-effect"
-                                    id="submit"
-                                    type="submit">
-                                    Send Message
-                                </button>
-
-                                <div
-                                    class="h3 text-center hidden"
-                                    id="msgSubmit"></div>
-
-                                <div class="clearfix"></div>
-                            </form>-->
                         </div>
 
                         <div class="col-md-3">
