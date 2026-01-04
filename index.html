@@ -1,402 +1,790 @@
-<!doctype html>
-<html>
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>
-            Mike's Marine for Honda Marine, Honda Power Equipment, Highfield RIB and Landmaster UTV Sales and Service
-        </title>
-        <meta name="description" content="Discover the exceptional range of Honda Marine outboards and Highfield RIBs at Mike's Marine. Experience unparalleled reliability on the water and robust performance on land with Landmaster UTVs. Visit us for expert marine dealership services and decades of experience in boating excellence." />
-        <link rel="canonical" href="https://mikesmarinebvi.com/" />
-        <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
-        <script type="text/javascript" src="js/jquery-ui.min.js"></script>
-        <link href="css/bootstrap.min.css" rel="stylesheet" />
-        <script>
-  (function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = "https://connect.facebook.net/en_US/sdk.js";
-    fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));
-</script>
-        <link
-            href="https://fonts.googleapis.com/css?family=Lato:300"
-            rel="stylesheet"
-            type="text/css" />
-        <link
-            href="css/animate.css"
-            media="screen"
-            rel="stylesheet"
-            type="text/css" />
-        <!--[if IE 8]>
-            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
-        <!--[if lt IE 9]>
-            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
-        <link href="css/components.css" rel="stylesheet" />
-        <link href="css/icons.css" rel="stylesheet" />
-        <link href="css/responsee.css" rel="stylesheet" />
-        <link href="css/owl-carousel/owl.carousel.css" rel="stylesheet" />
-        <link href="css/owl-carousel/owl.theme.css" rel="stylesheet" />
-        <!-- CUSTOM STYLE -->
-        <link
-            href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800&amp;subset=latin,latin-ext"
-            rel="stylesheet"
-            type="text/css" />
-      
-        <link href="css/template-style.css" rel="stylesheet" />
-        <link href="images/favicon.png" rel="icon" />
-        <!--<link href="css/custom.css" rel="stylesheet" type="text/css" />-->
-        <script src="https://data.beki.io/b/beki.min.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mike's Marine BVI | Honda Marine, Highfield RIB & Landmaster UTV Sales & Service</title>
+    <meta name="description" content="Discover the exceptional range of Honda Marine outboards and Highfield RIBs at Mike's Marine. Experience unparalleled reliability on the water and robust performance on land with Landmaster UTVs. Visit us for expert marine dealership services and decades of experience in boating excellence.">
+    <link rel="canonical" href="https://mikesmarinebvi.com/">
+    <link rel="icon" href="images/favicon.png">
 
-    </head>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-    <body
-        class="size-1140"
-        data-gramm="true"
-        data-gramm_editor="true"
-        data-gramm_id="eff29f8f-ea83-2a3e-26fd-7942bb74b07e">
-        <header>
-            <nav>
-                <div class="line">
-                    <div class="s-12 l-12">
-                        <img class="s-6 l-6 left" src="images/hondamarinedealer.png" />
-                    </div>
+    <style>
+        :root {
+            --ocean-deep: #002F6C;
+            --ocean-medium: #0057A8;
+            --ocean-bright: #0077CC;
+            --wave-foam: #E8F4F8;
+            --sand: #F5E6D3;
+            --coral: #FF6B4A;
+            --sunset: #FF9D42;
+            --steel: #5A6C7D;
+            --white: #FFFFFF;
+            --text-dark: #1A2332;
+            --text-medium: #4A5568;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: linear-gradient(135deg, var(--ocean-deep) 0%, var(--ocean-medium) 100%);
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 47, 108, 0.3);
+            animation: slideDown 0.6s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            padding: 1rem 0;
+        }
+
+        .logo img {
+            height: 60px;
+            width: auto;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            position: relative;
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--coral);
+            transform: translateX(-50%);
+            transition: width 0.3s ease;
+        }
+
+        .nav-menu a:hover::after {
+            width: 80%;
+        }
+
+        .nav-menu a:hover {
+            color: var(--sunset);
+        }
+
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 1.8rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            height: 90vh;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--ocean-deep) 0%, var(--ocean-bright) 100%);
+        }
+
+        .hero-slider {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .hero-slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out;
+        }
+
+        .hero-slide.active {
+            opacity: 1;
+        }
+
+        .hero-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.7);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            color: var(--white);
+            max-width: 1000px;
+            padding: 2rem;
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-content h1 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(3rem, 8vw, 6rem);
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: 3px;
+            text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-content p {
+            font-size: clamp(1.1rem, 2vw, 1.5rem);
+            margin-bottom: 2rem;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+            font-weight: 300;
+        }
+
+        .slider-nav {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 1rem;
+            z-index: 20;
+        }
+
+        .slider-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.4);
+            border: 2px solid var(--white);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .slider-dot.active {
+            background: var(--coral);
+            transform: scale(1.3);
+        }
+
+        /* Main Content */
+        .section {
+            padding: 5rem 2rem;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .intro {
+            background: linear-gradient(180deg, var(--wave-foam) 0%, var(--white) 100%);
+            text-align: center;
+        }
+
+        .intro h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            color: var(--ocean-deep);
+            margin-bottom: 2rem;
+            letter-spacing: 2px;
+        }
+
+        .intro p {
+            font-size: 1.2rem;
+            max-width: 900px;
+            margin: 0 auto 1rem;
+            color: var(--text-medium);
+        }
+
+        .intro .tagline {
+            font-style: italic;
+            color: var(--ocean-medium);
+            font-size: 1.3rem;
+            margin-top: 2rem;
+            font-weight: 600;
+        }
+
+        /* Products Grid */
+        .products {
+            background: var(--white);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .product-card {
+            background: var(--white);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 47, 108, 0.1);
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .product-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--coral) 0%, var(--sunset) 100%);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .product-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0, 47, 108, 0.2);
+        }
+
+        .product-card h3 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2rem;
+            color: var(--ocean-deep);
+            padding: 2rem 2rem 1rem;
+            letter-spacing: 1px;
+        }
+
+        .product-card h3 a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .product-card h3 a:hover {
+            color: var(--coral);
+        }
+
+        .product-card p {
+            padding: 0 2rem 2rem;
+            color: var(--text-medium);
+            line-height: 1.7;
+        }
+
+        .product-card .coming-soon {
+            font-size: 0.9rem;
+            color: var(--sunset);
+            font-weight: 600;
+        }
+
+        /* Service Section */
+        .service {
+            background: linear-gradient(135deg, var(--ocean-deep) 0%, var(--ocean-medium) 100%);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .service h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            margin-bottom: 2rem;
+            letter-spacing: 2px;
+        }
+
+        .service p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: var(--wave-foam);
+        }
+
+        .contact h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            color: var(--ocean-deep);
+            margin-bottom: 3rem;
+            text-align: center;
+            letter-spacing: 2px;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .contact-form {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0, 47, 108, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--ocean-deep);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #E2E8F0;
+            border-radius: 8px;
+            font-family: 'Outfit', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--ocean-bright);
+            box-shadow: 0 0 0 3px rgba(0, 119, 204, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .btn-submit {
+            background: linear-gradient(135deg, var(--coral) 0%, var(--sunset) 100%);
+            color: var(--white);
+            border: none;
+            padding: 1rem 2.5rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Outfit', sans-serif;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(255, 107, 74, 0.3);
+        }
+
+        .contact-info {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0, 47, 108, 0.1);
+        }
+
+        .contact-info h3 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2rem;
+            color: var(--ocean-deep);
+            margin-bottom: 1.5rem;
+            letter-spacing: 1px;
+        }
+
+        .contact-info p {
+            margin-bottom: 1rem;
+            color: var(--text-medium);
+        }
+
+        .contact-info a {
+            color: var(--ocean-bright);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-info a:hover {
+            color: var(--coral);
+        }
+
+        .contact-info strong {
+            color: var(--ocean-deep);
+            display: block;
+            margin-top: 0.5rem;
+        }
+
+        /* Map Section */
+        .map-section {
+            padding: 0;
+        }
+
+        .map-section iframe {
+            width: 100%;
+            height: 500px;
+            border: none;
+            display: block;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--ocean-deep);
+            color: var(--white);
+            padding: 2rem;
+            text-align: center;
+        }
+
+        footer p {
+            margin: 0;
+            opacity: 0.8;
+        }
+
+        /* Social Media */
+        .social-share {
+            position: fixed;
+            top: 100px;
+            right: 2rem;
+            z-index: 999;
+            background: var(--white);
+            padding: 0.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .mobile-toggle {
+                display: block;
+            }
+
+            .nav-menu {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--ocean-deep);
+                flex-direction: column;
+                padding: 2rem;
+                gap: 1rem;
+                transform: translateY(-100%);
+                opacity: 0;
+                pointer-events: none;
+                transition: all 0.3s ease;
+            }
+
+            .nav-menu.active {
+                transform: translateY(0);
+                opacity: 1;
+                pointer-events: all;
+            }
+
+            .hero {
+                height: 70vh;
+                margin-top: 70px;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .social-share {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="images/hondamarinedealer.png" alt="Mike's Marine BVI - Honda Marine Dealer">
+            </div>
+            <button class="mobile-toggle" aria-label="Toggle menu" onclick="toggleMenu()">☰</button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="hondabvi/index.html" target="_blank">Honda Marine</a></li>
+                <li><a href="https://landmasterbvi.com" target="_blank">Landmaster UTV</a></li>
+                <li><a href="highfieldbvi/index.html" target="_blank">Highfield RIB</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#map">Map</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Social Share (Fixed) -->
+    <div class="social-share">
+        <div class="fb-share-button" data-href="https://www.facebook.com/MikesMarineBVI" data-layout="button_count"></div>
+    </div>
+
+    <!-- Hero Section with Slider -->
+    <section class="hero" id="hero">
+        <div class="hero-slider">
+            <div class="hero-slide active">
+                <img src="img/atspeed.jpg" alt="Rigid inflatable boat with Honda engine at speed">
+            </div>
+            <div class="hero-slide">
+                <img src="img/om590-rib-honda.jpg" alt="Family enjoying Highfield RIB with Honda engine">
+            </div>
+            <div class="hero-slide">
+                <img src="img/1_4.jpg" alt="Honda Marine outboard engine">
+            </div>
+            <div class="hero-slide">
+                <img src="img/Landmaster-Strong.jpeg" alt="Landmaster UTV - Built Strong">
+            </div>
+            <div class="hero-slide">
+                <img src="img/landmaster-logs.jpeg" alt="Landmaster UTV hauling logs">
+            </div>
+            <div class="hero-slide">
+                <img src="img/landmaster-trailer.jpeg" alt="Landmaster UTV with boat trailer">
+            </div>
+        </div>
+        <div class="hero-content">
+            <h1>A Great Day Begins with Mike's Marine</h1>
+            <p>Honda Marine & Highfield RIB for the water • Landmaster UTV for the land</p>
+        </div>
+        <div class="slider-nav" id="sliderNav">
+            <span class="slider-dot active" onclick="goToSlide(0)"></span>
+            <span class="slider-dot" onclick="goToSlide(1)"></span>
+            <span class="slider-dot" onclick="goToSlide(2)"></span>
+            <span class="slider-dot" onclick="goToSlide(3)"></span>
+            <span class="slider-dot" onclick="goToSlide(4)"></span>
+            <span class="slider-dot" onclick="goToSlide(5)"></span>
+        </div>
+    </section>
+
+    <!-- Introduction Section -->
+    <section class="section intro">
+        <div class="container">
+            <h2>Engineered for Reliability</h2>
+            <p>Discover Honda Marine outboards, choose Highfield RIBs for durability, and enjoy hassle-free boating.</p>
+            <p>Landmaster UTVs are built in the USA to do more and are ready to work from dawn to dusk.</p>
+            <p>That's confidence with Mike's Marine, your marine dealership expert.</p>
+            <p class="tagline">"Decades of experience with all makes and styles of boats"</p>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="section products">
+        <div class="container">
+            <div class="products-grid">
+                <div class="product-card">
+                    <h3><a href="hondabvi/index.html">Honda Marine</a></h3>
+                    <p>Superior quality, reliability, technology, and fuel efficiency have made Honda an automotive legend. You'll find those same strengths in every Honda Marine outboard.</p>
                 </div>
-               
-                <div class="top-nav s-12 l-10">
-                    <p class="nav-text" "big">Menu</p>
 
-                    <ul class="right lgtxt">
-                        <li><a href="#carousel">Home</a></li>
-                        <li>
-                            <a href="hondabvi/index.html" target="_blank"
-                                >Honda Marine</a>
-                        </li>
-                        <li>
-                            <a href="https://landmasterbvi.com" target="_blank"
-                                >Landmaster UTV</a>
-                        </li>
-                        <li>
-                            <a href="highfieldbvi/index.html" target="_blank">Highfield RIB</a>
-                        </li>
-                        <li><a href="#content">Contact</a></li>
-                        <li>
-                            <a href="#map">Map</a>
-                        </li>
-                    </ul>
+                <div class="product-card">
+                    <h3><a href="https://landmasterbvi.com">Landmaster UTV</a></h3>
+                    <p>The Landmaster organization has been manufacturing UTVs and related recreational products for over 50 years. The company is an Indiana-based company producing a full line of gas and lithium-powered UTVs.</p>
                 </div>
-            </nav>
-            <div class="fb-share-button" data-href="https://www.facebook.com/MikesMarineBVI" data-layout="button_count"></div>
 
-        </header>
+                <div class="product-card">
+                    <h3><a href="highfieldbvi/index.html">Highfield RIB</a></h3>
+                    <p>Highfield rigid hull inflatable boats (RIBs), featuring exclusive powder-coated aluminum hulls, can trace their design heritage to the Australian line of Swift Boats. Developed to handle the tough conditions found along the Great Barrier Reef, Swift rigid-hull inflatable boats are renowned for their durability and performance.</p>
+                </div>
 
-        <section>
-            <!-- CAROUSEL -->
-            <div id="carousel">
-                <div class="owl-carousel owl-theme" id="owl-demo">
-                    <div class="item">
-                        <img class="hero-image" alt="Rigid inflatable boat with Honda engine and one guy driving" src="img/atspeed.jpg" />
-                        <div class="line">
-                            <h2>
-                                A Great Day On The Water Begins With Honda &amp;
-                                Highfield RIB
-                            </h2>
-                        </div>
-                    </div>
-
-                    <div class="item">
-                        <img class="hero-image" alt="Rigid inflatble with Honda engine dad and two kids" src="img/om590-rib-honda.jpg" />
-                        <div class="line">
-                            <h2>Power To Go</h2>
-                        </div>
-                    </div>
-
-                    <div class="item">
-                        <img alt="" src="img/1_4.jpg" />
-                        <div class="line">
-                            <h2>Redefining Best In Class</h2>
-                        </div>
-                    </div>
-                    
-                    <div class="item">
-                        <img class="hero-image" alt="Landmaster UTV" src="img/Landmaster-Strong.jpeg" />
-                        <div class="line">
-                            <h2>
-                                Landmaster - Built to do more
-                            </h2>
-                        </div>
-                    </div>
-                    
-                    <div class="item">
-                        <img class="hero-image" alt="Landmaster UTV" src="img/landmaster-logs.jpeg" />
-                        <div class="line">
-                            <h2>
-                                Landmaster - Built for work
-                            </h2>
-                        </div>
-                    </div>
-                    
-                    <div class="item">
-                        <img class="hero-image" alt="Landmaster UTV with boat on trailer" src="img/landmaster-trailer.jpeg" />
-                        <div class="line">
-                            <h2>
-                                Landmaster - Built for play
-                            </h2>
-                        </div>
-                    </div>
-                    
+                <div class="product-card">
+                    <h3>Boat Rental <span class="coming-soon">(Coming Soon)</span></h3>
+                    <p>Renting a boat is easy with our services. If you would like to rent a boat, come and talk to us about what kind of boat you need and for how long.</p>
                 </div>
             </div>
-            <!-- FIRST BLOCK -->
+        </div>
+    </section>
 
-            <div id="first-block">
-                <div class="line">
-                    <h1>
-                        Honda Marine & Highfield RIB - Crafted for the sea 
-                        <br />Landmaster - Crafted for the land
-                        <br />All engineered for reliability
-                    </h1>
+    <!-- Service Section -->
+    <section class="section service">
+        <div class="container">
+            <h2>Servicing by Honda Technicians</h2>
+            <p>Honda Engine Dealers provide sales, parts, service, and warranty repair for all Honda small engines. Mike has decades of experience with all makes and styles of boats and has two additional Honda Certified technicians on staff. You will get the best advice and deals at Mike's Marine.</p>
+        </div>
+    </section>
 
-                    <p class="big">
-                        Discover Honda Marine outboards, choose Highfield RIBs
-                        for durability, and enjoy hassle-free boating. 
-                        <br >Landmaster UTV's are built in the USA to do more and are ready to work from dawn to dusk.
-                        <br >That's confidence with Mike's Marine, your marine dealership
-                        expert.
-                        <br />
-                        "Decades of experience with all makes and styles of
-                        boats"
-                    </p>
-                    <hr class="style-four" />
-                    <div class="margin">
-                        <div class="s-12 m-6 l-3 margin-bottom">
-                            <h2>
-                                <a href="hondabvi/index.html">Honda Marine</a>
-                            </h2>
+    <!-- Contact Section -->
+    <section class="section contact" id="contact">
+        <div class="container">
+            <h2>Contact Mike's Marine BVI</h2>
+            <div class="contact-grid">
+                <div class="contact-form">
+                    <form name="contact" method="POST" data-netlify="true">
+                        <input type="hidden" name="form-name" value="contact">
 
-                            <p class="big">
-                                Superior quality, reliability, technology,
-                                    and fuel efficiency have made Honda an
-                                    automotive legend. You&#39;ll find those
-                                    same strengths in every Honda Marine
-                                    outboard.
-                            </p>
-                        </div>
-                        
-                        <div class="s-12 m-6 l-3 margin-bottom">
-                            <h2><a href="https://landmasterbvi.com">Landmaster UTV</a></h2>
-
-                            <p class="big">
-                               The Landmaster organization has been manufacturing UTVs and related recreational products for over 50 years. The company is an Indiana based company producing a full line of gas and lithium powered UTV’s.
-                
-                            </p>
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" placeholder="Your name" required>
                         </div>
 
-                        <div class="s-12 m-6 l-3 margin-bottom">
-                            <h2><a href="highfieldbvi/index.html">Highfield RIB</a></h2>
-
-                            <p class="big">
-                               Highfield rigid hull inflatable boats
-                                    (RIBs), featuring exclusive powder-coated
-                                    aluminum hulls, can trace their design heritage to
-                                    the Australian line of Swift Boats.
-                                    Developed to handle the tough conditions
-                                    found along the Great Barrier Reef, Swift
-                                    rigid-hull inflatable boats are renowned for
-                                    their durability and performance.
-                
-                            </p>
-                        </div>
-                        
-                        <div class="s-12 m-6 l-3 margin-bottom">
-                            <h2>Rental <br /><small>(coming soon)</small></h2>
-
-                            <p class="big">
-                                Renting a boat is easy with our services.
-                                    If you would like to rent a boat, come
-                                    and talk to us about what kind of boat you
-                                    need and for how long.
-                            </p>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="you@example.com" required>
                         </div>
 
-                        <!--<div class="s-12 m-6 l-3 margin-bottom">
-                            <h2>
-                                Timeshare <br /><small>(coming soon)</small>
-                            </h2>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" placeholder="How can Mike help you?" required></textarea>
+                        </div>
 
-                            <p class="big">
-                                Timesharing has allowed many people to
-                                    acquire what they want for a fraction of the
-                                    price. There is a growing interest in boat
-                                    timeshare because boats are quite expensive
-                                    not only to buy but also to maintain. By
-                                    timesharing, the costs of owning a boat can
-                                    be divided among the part-time owners.
-                            </p>
-                        </div>-->
-                        
-                    </div>
+                        <button type="submit" class="btn-submit">Send Message</button>
+                    </form>
                 </div>
-            </div><!-- first block -->
-        </section>
 
-        <div id="second-block">
-            <div class="line">
-                <div class="margin-bottom">
-                    <div class="margin">
-                        <article class="s-12 m-12 l-8 center">
-                            <h1>Servicing by Honda technicians</h1>
-
-                            <p>
-                                Honda Engine Dealers provide sales, parts,
-                                service and warranty repair for all Honda small
-                                engines. Mike has decades of experience with all
-                                makes and styles of boats and has two additional
-                                Honda Certified technicians on staff. You will
-                                get the best advice and deals at Mike's
-                                Marine.
-                            </p>
-                        </article>
-                    </div>
+                <div class="contact-info">
+                    <h3>Contact Info</h3>
+                    <p><strong>Location:</strong><br>Road Town, Tortola, BVI</p>
+                    <p><strong>Phone:</strong><br>+1 (284) 494-4000<br>+1 (284) 440-6060</p>
+                    <p><strong>Email (General):</strong><br><a href="mailto:mike@mikesmarinebvi.com">mike@mikesmarinebvi.com</a></p>
+                    <p><strong>Email (Honda Marine):</strong><br><a href="mailto:mike@hondabvi.com">mike@hondabvi.com</a></p>
+                    <p><strong>Hours:</strong><br>Mon–Fri (9 am – 5 pm)</p>
                 </div>
             </div>
-        </div><!-- second block -->
+        </div>
+    </section>
 
-        <div id="third-block">
-            <div class="line">
-                <h2>
-                    Mike&#39;s Marine BVI<br />
-                    <a href="hondabvi/index.html" target="_blank">HONDA MARINE</a>
-                    | <a href="highfieldbvi/index.html">HIGHFIELD RIB</a>
-                </h2>
+    <!-- Map Section -->
+    <section class="map-section" id="map">
+        <iframe src="https://www.google.com/maps/d/embed?mid=1doiqa4-8jDDIhB6PJMxMK2DY4zaPE1Nw" loading="lazy" title="Mike's Marine BVI Location"></iframe>
+    </section>
 
-                <hr />
-            </div>
-        </div><!-- third block -->
-<section id="content">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-9">
-                            <h2>Contact Mike's Marine BVI</h2>
-<form name="contact" method="POST" data-netlify="true">
-  <input type="hidden" name="form-name" value="contact" />
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2018-2026 Mike's Marine BVI. All rights reserved.</p>
+        </div>
+    </footer>
 
-  <div class="form-group">
-    <label for="name">Name</label>
-    <input
-      type="text"
-      id="name"
-      name="name"
-      class="form-control"
-      placeholder="Your name"
-      required
-    />
-  </div>
+    <!-- Scripts -->
+    <script>
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            const navMenu = document.getElementById('navMenu');
+            navMenu.classList.toggle('active');
+        }
 
-  <div class="form-group">
-    <label for="email">Email</label>
-    <input
-      type="email"
-      id="email"
-      name="email"
-      class="form-control"
-      placeholder="you@example.com"
-      required
-    />
-  </div>
+        // Hero Slider
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.hero-slide');
+        const dots = document.querySelectorAll('.slider-dot');
+        const totalSlides = slides.length;
 
-  <div class="form-group">
-    <label for="message">Message</label>
-    <textarea
-      id="message"
-      name="message"
-      class="form-control"
-      rows="5"
-      placeholder="How can Mike help you?"
-      required
-    ></textarea>
-  </div>
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active');
+                dots[i].classList.remove('active');
+            });
 
-  <button type="submit" class="btn btn-effect">
-    Send Message
-  </button>
-</form>
-                        </div>
+            if (index >= totalSlides) currentSlide = 0;
+            if (index < 0) currentSlide = totalSlides - 1;
 
-                        <div class="col-md-3">
-  <h3>Contact Info</h3>
-  <p>Road Town, Tortola, BVI</p>
-  <p>+1 (284) 494-4000</p>
-  <p>+1 (284) 440-6060</p>
+            slides[currentSlide].classList.add('active');
+            dots[currentSlide].classList.add('active');
+        }
 
-  <p>
-    Email (general): 
-    <a href="mailto:mike@mikesmarinebvi.com">mike@mikesmarinebvi.com</a>
-  </p>
-  <p>
-    Email (Honda Marine): 
-    <a href="mailto:mike@hondabvi.com">mike@hondabvi.com</a>
-  </p>
+        function nextSlide() {
+            currentSlide++;
+            if (currentSlide >= totalSlides) currentSlide = 0;
+            showSlide(currentSlide);
+        }
 
-  <p>Mon–Fri (9 am – 5 pm)</p>
-</div><!-- /.col-md-3 -->
-                    </div><!-- /.row -->
-                </div><!-- /.container -->
-            </section>
-            <!-- End Contact Form -->
+        function goToSlide(index) {
+            currentSlide = index;
+            showSlide(currentSlide);
+        }
 
-            <div id="map">
-                <iframe
-                    height="480"
-                    src="https://www.google.com/maps/d/embed?mid=1doiqa4-8jDDIhB6PJMxMK2DY4zaPE1Nw"
-                    width="100%"></iframe>
-            </div>
-            <!-- FOOTER -->
+        // Auto-advance slider
+        setInterval(nextSlide, 5000);
 
-            <footer>
-                <div class="line">
-                    <div class="s-12 l-6">
-                        <p>Copyright 2018, Mike&#39;s Marine BVI</p>
-                    </div>
-                </div>
-            </footer>
-            <!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBsLlTD_idBho3gKHLUleRX6XeCkjTnuO0"></script>-->
-            <!--<script src="custom.js"></script>-->
-            <script type="text/javascript" src="js/responsee.js"></script>
-            <script
-                type="text/javascript"
-                src="css/owl-carousel/owl.carousel.js"></script>
-            <script type="text/javascript">
-                jQuery(document).ready(function ($) {
-                    $("#owl-demo").owlCarousel({
-                        navigation: true,
-                        slideSpeed: 300,
-                        paginationSpeed: 400,
-                        autoPlay: true,
-                        singleItem: true
-                    });
-                    $("#owl-demo2").owlCarousel({
-                        slideSpeed: 300,
-                        autoPlay: true,
-                        navigation: true,
-                        pagination: true,
-                        singleItem: true
-                    });
-                });
-            </script>
-            <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
-            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-            <script type="text/javascript" src="js/jquery-min.js"></script>
-            <script
-                type="text/javascript"
-                src="js/form-validator.min.js"></script>
-            <script
-                type="text/javascript"
-                src="js/contact-form-script.js"></script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
 
-    </body>
+        // Close mobile menu on link click
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navMenu').classList.remove('active');
+            });
+        });
 
+        // Facebook SDK
+        (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "https://connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+</body>
 </html>
