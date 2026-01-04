@@ -1,161 +1,777 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta
-            name="description"
-            content="Highfield RIBs at Mike's Marne in the British Virgin Islands" />
-        <meta name="author" content="DamMacs" />
-        <title>Mike's Marine BVI Honda and Highfield RIB Dealer</title>
-        <!-- Bootstrap Core CSS -->
-        <link href="css/bootstrap.min.css" rel="stylesheet" />
-        <!-- Custom CSS -->
-        <link href="css/business-casual.css" rel="stylesheet" />
-        <!-- Fonts -->
-        <link
-            href="font-awesome/css/font-awesome.min.css"
-            rel="stylesheet"
-            type="text/css" />
-        <link
-            href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"
-            rel="stylesheet"
-            type="text/css" />
-        <link
-            href="https://fonts.googleapis.com/css?family=Open+Sans"
-            rel="stylesheet" />
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Highfield RIBs | Mike's Marine BVI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600;700&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy-deep: #0a1628;
+            --navy-rich: #1a2942;
+            --ocean-blue: #2563eb;
+            --sky-blue: #0ea5e9;
+            --electric: #06b6d4;
+            --foam: #e0f2fe;
+            --silver: #94a3b8;
+            --white: #ffffff;
+            --red-accent: #dc2626;
+        }
 
-    <body
-        data-gramm="true"
-        data-gramm_editor="true"
-        data-gramm_id="dc98049b-ebee-208f-2e93-a9e38ef6cde2">
-        <div class="col-lg-12">
-            <img
-                alt="Highfield Logo"
-                class="img-responsive center-block"
-                src="img/Highfield-Logo.png" />
-            <div class="address-bar">
-                Road Town, Tortola, BVI | 284-346-3069
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Work Sans', sans-serif;
+            color: var(--white);
+            background: var(--navy-deep);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Animated water gradient background */
+        .water-gradient {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, 
+                var(--navy-deep) 0%, 
+                var(--navy-rich) 40%, 
+                #1e3a5f 70%,
+                var(--navy-rich) 100%);
+            z-index: -2;
+        }
+
+        .water-gradient::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(ellipse at 20% 30%, rgba(37, 99, 235, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 70%, rgba(6, 182, 212, 0.1) 0%, transparent 50%);
+            animation: drift 20s ease-in-out infinite;
+        }
+
+        @keyframes drift {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(30px, -30px) scale(1.1); }
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1.5rem 4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            background: linear-gradient(to bottom, rgba(10, 22, 40, 0.95) 0%, transparent 100%);
+            backdrop-filter: blur(10px);
+            animation: slideDown 0.8s ease-out;
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .logo {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: var(--white);
+            text-transform: uppercase;
+        }
+
+        .logo span {
+            color: var(--electric);
+        }
+
+        .nav-contact {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .phone {
+            font-weight: 500;
+            color: var(--foam);
+            font-size: 1.1rem;
+            letter-spacing: 0.5px;
+        }
+
+        .cta-button {
+            background: var(--red-accent);
+            color: var(--white);
+            padding: 0.75rem 2rem;
+            border: none;
+            border-radius: 2px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            background: #b91c1c;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(220, 38, 38, 0.4);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            padding: 2rem;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+
+        @keyframes fadeInUp {
+            from { 
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .brand-logo {
+            margin-bottom: 2rem;
+            opacity: 0;
+            animation: fadeIn 1s ease-out 0.6s both;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .brand-logo img {
+            max-width: 350px;
+            height: auto;
+            filter: brightness(1.1) contrast(1.05);
+        }
+
+        h1 {
+            font-family: 'Oswald', sans-serif;
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 700;
+            line-height: 1;
+            letter-spacing: -2px;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            background: linear-gradient(135deg, var(--white) 0%, var(--foam) 50%, var(--electric) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+            color: var(--foam);
+            margin-bottom: 3rem;
+            font-weight: 300;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.9s both;
+        }
+
+        .hero-features {
+            display: flex;
+            gap: 3rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 1.2s both;
+        }
+
+        .feature-pill {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            padding: 0.75rem 2rem;
+            border: 2px solid var(--electric);
+            border-radius: 50px;
+            text-transform: uppercase;
+            background: rgba(6, 182, 212, 0.1);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .feature-pill:hover {
+            background: var(--electric);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(6, 182, 212, 0.3);
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 3rem;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            animation: fadeIn 1s ease-out 1.5s both, bounce 2s ease-in-out 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(10px); }
+        }
+
+        .scroll-indicator svg {
+            width: 30px;
+            height: 50px;
+            stroke: var(--electric);
+            stroke-width: 2;
+            fill: none;
+        }
+
+        /* About Section */
+        .about-section {
+            padding: 8rem 4rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        .section-tag {
+            font-family: 'Oswald', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 3px;
+            color: var(--electric);
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            letter-spacing: -1px;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+        }
+
+        .section-description {
+            font-size: 1.2rem;
+            color: var(--silver);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        /* Feature Cards */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 6rem;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, rgba(26, 41, 66, 0.6) 0%, rgba(10, 22, 40, 0.4) 100%);
+            border: 1px solid rgba(6, 182, 212, 0.2);
+            border-radius: 8px;
+            padding: 3rem 2.5rem;
+            transition: all 0.4s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .feature-card:hover {
+            border-color: var(--electric);
+            transform: translateY(-10px);
+            background: linear-gradient(135deg, rgba(26, 41, 66, 0.8) 0%, rgba(10, 22, 40, 0.6) 100%);
+            box-shadow: 0 20px 60px rgba(6, 182, 212, 0.2);
+        }
+
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--ocean-blue) 0%, var(--electric) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+            transition: all 0.4s ease;
+        }
+
+        .feature-card:hover .feature-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .feature-card h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .feature-card p {
+            color: var(--silver);
+            line-height: 1.7;
+            font-size: 1rem;
+        }
+
+        /* Image Showcase */
+        .showcase {
+            padding: 6rem 4rem;
+            background: linear-gradient(to bottom, 
+                transparent 0%, 
+                rgba(26, 41, 66, 0.3) 50%, 
+                transparent 100%);
+        }
+
+        .showcase-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .showcase-image {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
+            border: 2px solid rgba(6, 182, 212, 0.3);
+        }
+
+        .showcase-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.6s ease;
+        }
+
+        .showcase-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .showcase-text h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            font-weight: 700;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+        }
+
+        .showcase-text p {
+            font-size: 1.1rem;
+            color: var(--silver);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .showcase-text .highlight {
+            color: var(--electric);
+            font-weight: 600;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 8rem 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-content {
+            background: linear-gradient(135deg, rgba(26, 41, 66, 0.8) 0%, rgba(10, 22, 40, 0.6) 100%);
+            border: 2px solid var(--electric);
+            border-radius: 12px;
+            padding: 4rem 3rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .contact-content h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+        }
+
+        .contact-details {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            flex-wrap: wrap;
+            margin: 3rem 0;
+        }
+
+        .contact-item {
+            text-align: center;
+        }
+
+        .contact-item .label {
+            font-family: 'Oswald', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            color: var(--electric);
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-item .value {
+            font-size: 1.2rem;
+            color: var(--white);
+            font-weight: 500;
+        }
+
+        .contact-item a {
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            color: var(--electric);
+        }
+
+        .business-hours {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(6, 182, 212, 0.3);
+        }
+
+        .business-hours .label {
+            font-family: 'Oswald', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            color: var(--electric);
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .business-hours .value {
+            font-size: 1.1rem;
+            color: var(--silver);
+        }
+
+        /* Footer */
+        footer {
+            padding: 3rem 4rem;
+            text-align: center;
+            border-top: 1px solid rgba(6, 182, 212, 0.2);
+            background: rgba(10, 22, 40, 0.6);
+            backdrop-filter: blur(10px);
+        }
+
+        footer p {
+            color: var(--silver);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav {
+                padding: 1rem 2rem;
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .nav-contact {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .hero-features {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .about-section,
+            .showcase,
+            .contact-section {
+                padding: 4rem 2rem;
+            }
+
+            .showcase-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .contact-details {
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Decorative elements */
+        .wave-decoration {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            opacity: 0.1;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="water-gradient"></div>
+
+    <nav>
+        <div class="logo">
+            Mike's Marine <span>BVI</span>
+        </div>
+        <div class="nav-contact">
+            <div class="phone">📞 284-346-3069</div>
+            <a href="#contact" class="cta-button">Contact Us</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="brand-logo">
+                <svg width="350" height="80" viewBox="0 0 350 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <text x="175" y="50" font-family="Oswald, sans-serif" font-size="48" font-weight="700" fill="white" text-anchor="middle" letter-spacing="2">HIGHFIELD</text>
+                </svg>
+            </div>
+            <h1>Rigid Inflatable Boats</h1>
+            <div class="hero-subtitle">Premium Marine Engineering</div>
+            <div class="hero-features">
+                <div class="feature-pill">Design</div>
+                <div class="feature-pill">Performance</div>
+                <div class="feature-pill">Durability</div>
+                <div class="feature-pill">Reliability</div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <svg viewBox="0 0 30 50">
+                <rect x="5" y="5" width="20" height="40" rx="10" ry="10"/>
+                <circle cx="15" cy="15" r="3" fill="currentColor">
+                    <animate attributeName="cy" from="15" to="30" dur="1.5s" repeatCount="indefinite"/>
+                    <animate attributeName="opacity" from="1" to="0" dur="1.5s" repeatCount="indefinite"/>
+                </circle>
+            </svg>
+        </div>
+    </section>
+
+    <section class="about-section">
+        <div class="section-header">
+            <div class="section-tag">Authorized Dealer</div>
+            <h2 class="section-title">Highfield RIBs in the British Virgin Islands</h2>
+            <p class="section-description">
+                Highfield offers a complete line of durable and reliable aluminum hull rigid inflatable boats, engineered for performance in Caribbean waters. Factory warranty service with a full line of Highfield parts available.
+            </p>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🛥️</div>
+                <h3>Premium Construction</h3>
+                <p>Aluminum hull rigid inflatable boats built to withstand demanding marine environments with superior craftsmanship and materials.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3>Exceptional Performance</h3>
+                <p>Designed for speed, stability, and maneuverability in all conditions. Perfect for island hopping and coastal exploration.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🔧</div>
+                <h3>Factory Warranty Service</h3>
+                <p>Complete service and maintenance with genuine Highfield parts. Expert technicians trained directly by the manufacturer.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🎯</div>
+                <h3>Proven Reliability</h3>
+                <p>Trusted by professionals and enthusiasts worldwide. Engineered for years of trouble-free operation in tropical conditions.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🌊</div>
+                <h3>Versatile Applications</h3>
+                <p>From tender service to diving expeditions, Highfield RIBs excel in every marine application you can imagine.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">💎</div>
+                <h3>Value Investment</h3>
+                <p>Exceptional build quality and durability ensure your Highfield RIB retains value while delivering years of performance.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="showcase">
+        <div class="showcase-content">
+            <div class="showcase-text">
+                <h2>Built for the Caribbean</h2>
                 <p>
-                    <a href="../index.html#content">CONTACT MIKE'S MARINE</a>
+                    Highfield's rigid inflatable boats combine the best of both worlds: the stability and performance of a hard hull with the buoyancy and impact resistance of an inflatable collar.
+                </p>
+                <p>
+                    The result is a boat that's <span class="highlight">virtually unsinkable</span>, incredibly stable, and capable of handling the diverse conditions found in BVI waters—from calm anchorages to open ocean passages.
+                </p>
+                <p>
+                    Whether you're using it as a yacht tender, a dive boat, or your primary vessel for exploring the islands, a Highfield RIB delivers <span class="highlight">unmatched versatility and peace of mind</span>.
                 </p>
             </div>
+            <div class="showcase-image">
+                <svg width="600" height="400" viewBox="0 0 600 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Ocean background -->
+                    <rect width="600" height="400" fill="url(#oceanGradient)"/>
+                    
+                    <!-- Waves -->
+                    <path d="M 0 250 Q 150 230 300 250 T 600 250 L 600 400 L 0 400 Z" fill="rgba(14, 165, 233, 0.2)"/>
+                    <path d="M 0 280 Q 100 270 200 280 T 400 280 T 600 280 L 600 400 L 0 400 Z" fill="rgba(14, 165, 233, 0.3)"/>
+                    
+                    <!-- Boat -->
+                    <ellipse cx="300" cy="230" rx="120" ry="30" fill="#1a2942"/>
+                    <path d="M 180 230 L 200 180 L 400 180 L 420 230 Z" fill="#2563eb"/>
+                    <rect x="280" y="140" width="40" height="40" fill="#334155"/>
+                    <circle cx="300" cy="200" r="8" fill="#06b6d4"/>
+                    
+                    <!-- Highlights -->
+                    <ellipse cx="300" cy="225" rx="100" ry="8" fill="rgba(255, 255, 255, 0.3)"/>
+                    
+                    <defs>
+                        <linearGradient id="oceanGradient" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0%" stop-color="#0ea5e9"/>
+                            <stop offset="100%" stop-color="#1a2942"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+            </div>
+        </div>
+    </section>
 
-            <div class="container">
-                <div class="row">
-                    <div class="box">
-                        <div class="col-lg-12 text-center">
-                            <p>
-                                <img
-                                    alt="honda engine"
-                                    src="img/highfield-honda.png" />
-                            </p>
+    <section id="contact" class="contact-section">
+        <div class="contact-content">
+            <h2>Get in Touch</h2>
+            <p style="color: var(--silver); font-size: 1.1rem; margin-bottom: 2rem;">
+                Ready to learn more about Highfield RIBs? Contact Mike's Marine BVI today.
+            </p>
 
-                            <h2 class="brand-before">
-                                <small>Welcome to</small>
-                            </h2>
-
-                            <a href="https://mikesmarinebvi.com/"
-                                ><h1 class="brand-name">
-                                    Highfield RIBs at Mike&#39;s Marine BVI
-                                </h1></a
-                            >
-
-                            <p>
-                                <strong
-                                    >Factory Warranty Service with a full line
-                                    of Highfield Parts</strong
-                                >
-                            </p>
-
-                            <hr class="tagline-divider" />
-                            <h2>
-                                <small
-                                    ><strong
-                                        >DESIGN - PERFORMANCE - DURABILITY -
-                                        RELIABILITY</strong
-                                    >
-                                </small>
-                            </h2>
-                        </div>
-                    </div>
+            <div class="contact-details">
+                <div class="contact-item">
+                    <div class="label">Location</div>
+                    <div class="value">Road Town, Tortola, BVI</div>
                 </div>
 
-                <div class="row">
-                    <div class="box">
-                        <div class="col-lg-12">
-                            <hr />
-                            <h2 class="intro-text text-center">
-                                Highfield RIB Dealership in BVI
-                            </h2>
-                            <hr class="visible-xs" />
-                            <p style="text-align: center">
-                                Highfield offers a full line of durable and
-                                reliable aluminum hull rigid hull inflatable
-                                boats.
-                            </p>
-                        </div>
-                    </div>
+                <div class="contact-item">
+                    <div class="label">Phone</div>
+                    <div class="value"><a href="tel:+12843463069">284-346-3069</a></div>
                 </div>
 
-                <div class="row">
-                    <div class="box">
-                        <div class="col-lg-12">
-                            <hr />
-                            <h2 class="text-center">
-                                <a href="../index.html#content"
-                                    >Contact
-                                    <strong>Mike&#39;s Marine BVI</strong></a
-                                >
-                            </h2>
-
-                            <hr />
-                        </div>
-
-                        <div class="col-lg-12">
-                            <p style="text-align: center">
-                                Address:
-                                <strong>Road Town, Tortola, BVI</strong> <br />
-                                Phone: <strong>284-346-3069</strong> <br />
-                                Email:
-                                <strong
-                                    ><a href="mailto:mike%40mikesmarinebvi.com"
-                                        >mike@mikesmarinebvi.com</a
-                                    ></strong
-                                >
-                                <br />
-                                Business Hours:
-                                <strong>8.00 am - 5.00 pm</strong>
-                            </p>
-                        </div>
-
-                        <div class="clearfix"></div>
+                <div class="contact-item">
+                    <div class="label">Email</div>
+                    <div class="value">
+                        <a href="mailto:mike@mikesmarinebvi.com">mike@mikesmarinebvi.com</a>
                     </div>
                 </div>
             </div>
 
-            <footer>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12 text-center">
-                            <div class="copyright">
-                                Copyright &copy; Mike&#39;s Marine BVI 2016
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </footer>
-            <!-- jQuery -->
-            <script src="js/jquery.js"></script>
-            <!-- Bootstrap Core JavaScript -->
-            <script src="js/bootstrap.min.js"></script>
-            <script type="application/ld+json">
-                { "@context" : "http://schema.org", "@type" : "Organization", "name" : , "url" : , "contactPoint" : [{ "@type" : "ContactPoint", "telephone" : , "contactType" : "customer service" }] }
-            </script>
-        </div>
-    </body>
+            <div class="business-hours">
+                <div class="label">Business Hours</div>
+                <div class="value">8:00 AM - 5:00 PM</div>
+            </div>
 
-    <!-- Mirrored from mikesmarinebvi.com/hondabvi/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 07 Jan 2024 16:37:11 GMT -->
+            <div style="margin-top: 3rem;">
+                <a href="https://mikesmarinebvi.com" class="cta-button">Visit Mike's Marine BVI</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Mike's Marine BVI. Authorized Highfield Dealer in the British Virgin Islands.</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe feature cards
+        document.querySelectorAll('.feature-card').forEach((card, index) => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = `all 0.6s ease ${index * 0.1}s`;
+            observer.observe(card);
+        });
+
+        // Observe sections
+        document.querySelectorAll('.showcase-content, .contact-content').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(30px)';
+            section.style.transition = 'all 0.8s ease';
+            observer.observe(section);
+        });
+    </script>
+</body>
 </html>
