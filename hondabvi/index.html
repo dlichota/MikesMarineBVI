@@ -1,111 +1,883 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<!-- Mirrored from mikesmarinebvi.com/hondabvi/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 07 Jan 2024 16:37:04 GMT -->
-
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <title>Mike&#39;s Marine BVI Honda and Highfield RIB Dealer</title>
-    <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet" />
-    <!-- Custom CSS -->
-    <link href="css/business-casual.css" rel="stylesheet" />
-    <!-- Fonts -->
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" />
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    <script src="http://load.sumome.com/" data-sumo-site-id="fd1d581e5ccc200194844638c973273abb03c2805da1c8ef152587bf3c71467b" async="async"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Honda Marine at Mike's Marine BVI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;600;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --honda-red: #cc0000;
+            --dark-red: #990000;
+            --light-red: #ff1a1a;
+            --dark-gray: #1a1a1a;
+            --medium-gray: #333333;
+            --light-gray: #666666;
+            --white: #ffffff;
+            --off-white: #f5f5f5;
+            --ocean-blue: #0066cc;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--dark-gray);
+            overflow-x: hidden;
+            background: var(--white);
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+            animation: slideDown 0.6s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1.2rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logos {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .logo-divider {
+            width: 1px;
+            height: 40px;
+            background: rgba(0, 0, 0, 0.1);
+        }
+
+        .logo img {
+            height: 45px;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-gray);
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--honda-red);
+        }
+
+        .contact-btn {
+            background: var(--honda-red);
+            color: var(--white);
+            padding: 0.7rem 1.5rem;
+            border-radius: 5px;
+            font-weight: 700;
+            transition: all 0.3s ease;
+        }
+
+        .contact-btn:hover {
+            background: var(--dark-red);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(204, 0, 0, 0.3);
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            height: 85vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, var(--dark-gray) 0%, var(--medium-gray) 100%);
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                linear-gradient(45deg, transparent 30%, rgba(204, 0, 0, 0.1) 30%, rgba(204, 0, 0, 0.1) 70%, transparent 70%);
+            background-size: 100px 100px;
+            opacity: 0.3;
+            animation: slidePattern 20s linear infinite;
+        }
+
+        @keyframes slidePattern {
+            from { transform: translateX(0); }
+            to { transform: translateX(100px); }
+        }
+
+        .hero-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 2;
+            animation: fadeInUp 0.8s ease-out 0.3s both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: var(--honda-red);
+            color: var(--white);
+            padding: 0.5rem 1.5rem;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            clip-path: polygon(0 0, 95% 0, 100% 50%, 95% 100%, 0 100%);
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+        }
+
+        .hero h1 {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: clamp(3rem, 8vw, 6.5rem);
+            color: var(--white);
+            line-height: 1;
+            font-weight: 700;
+            letter-spacing: -2px;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 0.8s ease-out 0.5s both;
+        }
+
+        .hero h1 .highlight {
+            color: var(--honda-red);
+            display: block;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.1rem, 2vw, 1.4rem);
+            color: rgba(255, 255, 255, 0.85);
+            max-width: 650px;
+            margin-bottom: 3rem;
+            line-height: 1.7;
+            font-weight: 300;
+            animation: fadeInUp 0.8s ease-out 0.6s both;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            animation: fadeInUp 0.8s ease-out 0.7s both;
+        }
+
+        .btn {
+            padding: 1.2rem 2.5rem;
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-size: 0.9rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            border-radius: 5px;
+        }
+
+        .btn-primary {
+            background: var(--honda-red);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: var(--dark-red);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(204, 0, 0, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+
+        .btn-secondary:hover {
+            background: var(--white);
+            color: var(--honda-red);
+        }
+
+        /* Features Grid */
+        .features {
+            padding: 8rem 2rem;
+            background: var(--white);
+        }
+
+        .section-header {
+            max-width: 1400px;
+            margin: 0 auto 5rem;
+            text-align: center;
+        }
+
+        .section-badge {
+            display: inline-block;
+            background: var(--off-white);
+            color: var(--honda-red);
+            padding: 0.5rem 1.5rem;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            border-radius: 30px;
+        }
+
+        .section-title {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            color: var(--dark-gray);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            letter-spacing: -1px;
+        }
+
+        .section-description {
+            font-size: 1.1rem;
+            color: var(--light-gray);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        .features-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: var(--off-white);
+            padding: 2.5rem;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 0;
+            background: var(--honda-red);
+            transition: height 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-card:hover::before {
+            height: 100%;
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-title {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.5rem;
+            color: var(--dark-gray);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .feature-description {
+            color: var(--light-gray);
+            line-height: 1.7;
+        }
+
+        /* Product Range */
+        .products {
+            padding: 8rem 2rem;
+            background: var(--dark-gray);
+            position: relative;
+        }
+
+        .products .section-header {
+            color: var(--white);
+        }
+
+        .products .section-badge {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--honda-red);
+        }
+
+        .products .section-title {
+            color: var(--white);
+        }
+
+        .products .section-description {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .products-showcase {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .product-category {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 3rem 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-category::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--honda-red), var(--light-red));
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .product-category:hover::before {
+            transform: scaleX(1);
+        }
+
+        .product-category:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-5px);
+        }
+
+        .product-hp {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 4rem;
+            color: var(--honda-red);
+            font-weight: 700;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-label {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: rgba(255, 255, 255, 0.6);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .product-name {
+            font-size: 1.2rem;
+            color: var(--white);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .product-desc {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        /* Image Section */
+        .image-section {
+            padding: 0;
+            background: var(--white);
+        }
+
+        .image-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+        }
+
+        .image-box {
+            position: relative;
+            overflow: hidden;
+            aspect-ratio: 16/10;
+        }
+
+        .image-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .image-box:hover img {
+            transform: scale(1.05);
+        }
+
+        .image-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+            padding: 2rem;
+            color: var(--white);
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .image-box:hover .image-overlay {
+            transform: translateY(0);
+        }
+
+        .image-overlay h3 {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 8rem 2rem;
+            background: var(--honda-red);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+        }
+
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .contact-content h2 {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            color: var(--white);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+
+        .contact-content p {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+
+        .contact-info {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            padding: 3rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: start;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .contact-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .contact-icon {
+            font-size: 1.8rem;
+            color: var(--white);
+            background: rgba(255, 255, 255, 0.1);
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .contact-details h3 {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .contact-details p {
+            font-size: 1.1rem;
+            color: var(--white);
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .contact-details a {
+            color: var(--white);
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .contact-details a:hover {
+            opacity: 0.7;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-gray);
+            padding: 3rem 2rem 2rem;
+            color: rgba(255, 255, 255, 0.6);
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-logos img {
+            height: 40px;
+            width: auto;
+            opacity: 0.7;
+            transition: opacity 0.3s ease;
+        }
+
+        .footer-logos img:hover {
+            opacity: 1;
+        }
+
+        .footer-text {
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .nav-links {
+                display: none;
+            }
+
+            .products-showcase {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .image-container {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                height: auto;
+                padding: 4rem 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
 </head>
-
-<body data-gramm="true" data-gramm_editor="true" data-gramm_id="dc98049b-ebee-208f-2e93-a9e38ef6cde2">
-    <div class="col-lg-12"><img alt="honda engine" class="img-responsive center-block" src="img/honda-marine-logo1.jpg" />
-        <div class="address-bar">Road Town, Tortola, BVI | 284-346-3069
-            <p><a href="../index.html#content">CONTACT MIKE&#39;S MARINE</a></p>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="nav-logos">
+                <div class="logo">
+                    <img src="img/honda-marine-logo1.jpg" alt="Honda Marine">
+                </div>
+                <div class="logo-divider"></div>
+                <div class="logo">
+                    <span style="font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 1.3rem; color: #333;">MIKE'S MARINE BVI</span>
+                </div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#products">Products</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact" class="contact-btn">Contact</a></li>
+            </ul>
         </div>
+    </nav>
 
-        <div class="container">
-            <div class="row">
-                <div class="box">
-                    <div class="col-lg-12 text-center">
-                        <p><img alt="honda engine" src="img/hondaengine1.jpg" /></p>
-
-                        <h2 class="brand-before"><small>Welcome to</small></h2>
-
-                        <a href="https://mikesmarinebvi.com/"><h1 class="brand-name">Honda at Mike&#39;s Marine BVI</h1></a>
-
-                        <p><strong>Factory Warranty Service with a full line of Honda Parts</strong></p>
-
-                        <hr class="tagline-divider" />
-                        <h2><small><strong>Honda Marine | The Power of Boating</strong> </small></h2>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="box">
-                    <div class="col-lg-12">
-                        <hr />
-                        <h2 class="intro-text text-center">Honda Dealership in BVI</h2>
-
-                        <hr />
-                        <hr class="visible-xs" />
-                        <p style="text-align: center">Honda Marine offers a full line of dependable 4-stroke outboard motors.
-                            <br /> Find the right boat engine for you.
-                            <br /> Portable, Mid-range, and Large Motors from 2 to 250 hp.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="box">
-                    <div class="col-lg-12">
-                        <hr />
-                        <h2 class="text-center"><a href="../index.html#content">Contact <strong>Mike&#39;s Marine BVI</strong></a></h2>
-
-                        <hr />
-                    </div>
-
-                    <div class="col-lg-12">
-                        <p style="text-align: center">Address: <strong>Road Town, Tortola, BVI</strong>
-                            <br /> Phone: <strong>284-346-3069</strong>
-                            <br /> Email: <strong><a href="mailto:mike%40mikesmarinebvi.com">mike@mikesmarinebvi.com</a></strong>
-                            <br /> Business Hours: <strong>8.00 am - 5.00 pm</strong></p>
-                    </div>
-
-                    <div class="clearfix"></div>
-                </div>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">Official Honda Dealer</div>
+            <h1>
+                THE POWER<br>
+                <span class="highlight">OF BOATING</span>
+            </h1>
+            <p class="hero-subtitle">
+                Dependable 4-stroke Honda Marine outboard motors from 2 to 250 HP. Factory warranty service with a full line of genuine Honda parts in the British Virgin Islands.
+            </p>
+            <div class="hero-cta">
+                <a href="#contact" class="btn btn-primary">Get in Touch</a>
+                <a href="https://mikesmarinebvi.com/" class="btn btn-secondary">Visit Mike's Marine</a>
             </div>
         </div>
+    </section>
 
-        <footer>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12 text-center">
-                        <div class="copyright">Copyright &copy; Mike&#39;s Marine BVI 2016</div>
+    <!-- Features Section -->
+    <section class="features" id="services">
+        <div class="section-header">
+            <div class="section-badge">Why Choose Honda</div>
+            <h2 class="section-title">Reliable Marine Power</h2>
+            <p class="section-description">
+                Honda Marine engines are engineered for dependability, efficiency, and performance. From portable to large motors, find the perfect engine for your vessel.
+            </p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🔧</div>
+                <h3 class="feature-title">Factory Warranty Service</h3>
+                <p class="feature-description">
+                    Complete factory-authorized service and maintenance with certified technicians who know Honda Marine inside and out.
+                </p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">⚙️</div>
+                <h3 class="feature-title">Genuine Honda Parts</h3>
+                <p class="feature-description">
+                    Full inventory of genuine Honda Marine parts and accessories to keep your outboard running at peak performance.
+                </p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🌊</div>
+                <h3 class="feature-title">4-Stroke Technology</h3>
+                <p class="feature-description">
+                    Advanced 4-stroke engines deliver superior fuel efficiency, cleaner emissions, and quieter operation on the water.
+                </p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💪</div>
+                <h3 class="feature-title">Proven Reliability</h3>
+                <p class="feature-description">
+                    Honda's legendary engineering and quality standards ensure your motor performs when you need it most.
+                </p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🎯</div>
+                <h3 class="feature-title">Local Expertise</h3>
+                <p class="feature-description">
+                    BVI-based service and support that understands the unique demands of Caribbean marine environments.
+                </p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3 class="feature-title">Performance Range</h3>
+                <p class="feature-description">
+                    From portable 2 HP models to powerful 250 HP outboards, we have the right engine for every application.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" id="products">
+        <div class="section-header">
+            <div class="section-badge">Motor Range</div>
+            <h2 class="section-title">Find Your Perfect Engine</h2>
+            <p class="section-description">
+                Honda Marine offers a complete lineup of dependable 4-stroke outboard motors designed for every boating need.
+            </p>
+        </div>
+        <div class="products-showcase">
+            <div class="product-category">
+                <div class="product-hp">2-20</div>
+                <div class="product-label">Horsepower</div>
+                <div class="product-name">Portable Motors</div>
+                <p class="product-desc">Lightweight and easy to transport. Perfect for tenders, dinghies, and small boats.</p>
+            </div>
+            <div class="product-category">
+                <div class="product-hp">25-100</div>
+                <div class="product-label">Horsepower</div>
+                <div class="product-name">Mid-Range Motors</div>
+                <p class="product-desc">Versatile performance for fishing boats, pontoons, and recreational vessels.</p>
+            </div>
+            <div class="product-category">
+                <div class="product-hp">115-250</div>
+                <div class="product-label">Horsepower</div>
+                <div class="product-name">Large Motors</div>
+                <p class="product-desc">Maximum power and performance for offshore fishing and high-speed applications.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Image Section -->
+    <section class="image-section">
+        <div class="image-container">
+            <div class="image-box">
+                <img src="img/hondaengine1.jpg" alt="Honda Marine Engine">
+                <div class="image-overlay">
+                    <h3>Honda Marine Technology</h3>
+                    <p>Advanced engineering for superior performance</p>
+                </div>
+            </div>
+            <div class="image-box">
+                <img src="img/honda-marine-logo1.jpg" alt="Honda Marine Logo">
+                <div class="image-overlay">
+                    <h3>Authorized Dealer</h3>
+                    <p>Official Honda Marine service and parts</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="contact-container">
+            <div class="contact-content">
+                <h2>Ready to Power Your Vessel?</h2>
+                <p>Visit Mike's Marine BVI in Road Town, Tortola for expert advice, service, and genuine Honda Marine parts. Our team is ready to help you find the perfect outboard motor.</p>
+            </div>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">📍</div>
+                    <div class="contact-details">
+                        <h3>Location</h3>
+                        <p>Road Town, Tortola, BVI</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">📞</div>
+                    <div class="contact-details">
+                        <h3>Phone</h3>
+                        <p><a href="tel:284-346-3069">284-346-3069</a></p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">✉️</div>
+                    <div class="contact-details">
+                        <h3>Email</h3>
+                        <p><a href="mailto:mike@mikesmarinebvi.com">mike@mikesmarinebvi.com</a></p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">🕐</div>
+                    <div class="contact-details">
+                        <h3>Business Hours</h3>
+                        <p>8:00 AM - 5:00 PM</p>
                     </div>
                 </div>
             </div>
-        </footer>
-        <!-- jQuery -->
-        <script src="js/jquery.js"></script>
-        <!-- Bootstrap Core JavaScript -->
-        <script src="js/bootstrap.min.js"></script>
-        <script type="application/ld+json">
-            { "@context" : "http://schema.org", "@type" : "Organization", "name" : , "url" : , "contactPoint" : [{ "@type" : "ContactPoint", "telephone" : , "contactType" : "customer service" }] }
-        </script>
-    </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logos">
+                <img src="img/honda-marine-logo1.jpg" alt="Honda Marine">
+            </div>
+            <div class="footer-text">
+                <p>Copyright © Mike's Marine BVI 2016 - 2024</p>
+                <p>Official Honda Marine Dealer in the British Virgin Islands</p>
+            </div>
+        </div>
+    </footer>
 </body>
-
-<!-- Mirrored from mikesmarinebvi.com/hondabvi/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 07 Jan 2024 16:37:11 GMT -->
-
 </html>
